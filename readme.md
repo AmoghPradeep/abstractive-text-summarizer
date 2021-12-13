@@ -2,8 +2,8 @@
 ## How to install ##
 Steps : 
   1. Clone repository.
-  2. Install dependencies using pip install -r requirements.txt
-  3. Run app.py using python app.py
+  2. Install dependencies using ```pip install -r requirements.txt```
+  3. Run app.py using ```python app.py```
 
 ## Problem Overview : Extractive vs Abstractive Summarization
 **Extraction-based Summarization:** <br>
