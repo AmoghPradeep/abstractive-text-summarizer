@@ -34,7 +34,7 @@ But Recurrent Neural Networks suffer from short-term memory (read <a href="https
 The problem with LSTM’s, is that they tend to have poor memory recall with data they’ve seen many time-steps ago, moreover these models are computationally intensive and their sequential nature prevents us from taking advantage of parallel computing.
 <br>
 <br>
-👉 <b>Transformers based on Self-Attention </b> was first introduced in the  <a href="https://arxiv.org/abs/1706.03762"> Attention Is All You Need </a> paper by Ashish Vaswani et al. In simple words it self-attention is a mechanism that allows each input in a sequence to look at the whole sequence to compute a representation of the sequence.
+👉 <b>Transformers based on Self-Attention </b> was first introduced in the  <a href="https://arxiv.org/abs/1706.03762"> Attention Is All You Need </a> paper by Ashish Vaswani et al. It is an improvement over Bahdanau's attention. In simple words it self-attention is a mechanism that allows each input in a sequence to look at the whole sequence to compute a representation of the sequence.
 <br>
 <br>
 <p align="center">
