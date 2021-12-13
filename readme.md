@@ -1,5 +1,5 @@
 # Abstractive Text Summarizer
-Made by **Team Binary Brains** <br>
+Made by **Team Binary Brains** @ Manthan 2021 Hackathon<br>
 - [Amogh Pradeep](https://www.linkedin.com/in/amogh-pradeep-0061b9108/)
 - [Harshad Bhere](https://www.linkedin.com/in/harshadbhere/)
 - [Harshvardhan Thakur](https://www.linkedin.com/in/harsh-vardhan-thakur-74a224195/)
