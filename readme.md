@@ -2,7 +2,7 @@
 Made by **Team Binary Brains** @ Manthan 2021 Hackathon<br>
 - [Amogh Pradeep](https://www.linkedin.com/in/amogh-pradeep-0061b9108/)
 - [Harshad Bhere](https://github.com/harshadbhere)
-- [Harshvardhan Thakur](https://www.linkedin.com/in/harsh-vardhan-thakur-74a224195/)
+- [Harshvardhan Thakur](https://github.com/hvt0707)
 ## How to install ##
 Steps : 
   1. Clone repository.
