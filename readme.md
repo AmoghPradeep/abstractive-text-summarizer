@@ -1,7 +1,7 @@
 # Abstractive Text Summarizer
 Made by **Team Binary Brains** @ Manthan 2021 Hackathon<br>
 - [Amogh Pradeep](https://www.linkedin.com/in/amogh-pradeep-0061b9108/)
-- [Harshad Bhere](https://www.linkedin.com/in/harshadbhere/)
+- [Harshad Bhere](https://github.com/harshadbhere)
 - [Harshvardhan Thakur](https://www.linkedin.com/in/harsh-vardhan-thakur-74a224195/)
 ## How to install ##
 Steps : 
