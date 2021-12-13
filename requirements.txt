@@ -1,0 +1,10 @@
+beautifulsoup4==4.10.0
+blurr==0.4.1
+datasets==1.16.1
+fastai==2.5.3
+Flask==2.0.2
+google_api_python_client==2.33.0
+ohmeow_blurr==0.1.1
+pandas==1.2.4
+PyPDF2==1.26.0
+transformers==4.12.5

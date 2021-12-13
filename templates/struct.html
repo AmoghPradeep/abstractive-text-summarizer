@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Summarization</title>
+    <link rel="icon" href="{{url_for('static', filename='binarybrains-logo-notext-removebg.png')}}">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+	<title></title>
+</head>
+<style type="text/css">
+	.button-active {
+	}
+	body {
+		overflow: hidden;
+	}
+	textarea {
+		outline: none;
+		border: 2px solid rgb(126, 126, 126) !important;
+		border-radius:4px !important
+	}
+
+	.output{
+		border : none !important;
+	}
+	.remove{
+		display: none;
+	}
+</style>
+<body>
+	<header class="fixed inset-0 w-full flex justify-evenly h-20">
+	        <div class="flex w-full justify-center pl-2">
+	            <img src="{{url_for('static', filename='logo.jfif')}}" alt="Manthan-Logo" class="m-1 cursor-pointer" onclick="location.href='https://manthan.mic.gov.in/'">
+	        	<img src="{{url_for('static', filename='binarybrains-logo-removebg.png')}}" alt="BinaryBrains-Logo"
+	            class="m-1 cursor-pointer" onclick="location.href='index.html'">
+	        </div>
+	</header>
+	<div class="flex flex-wrap mt-20 flex-row w-full">
+        <div class="w-full md:w-2/3">
+            <div class="w-full flex flex-col md:h-screen mt-10">
+                <textarea class="input-text text-div remove w-11/12 md:h-1/3 m-2 p-2 rounded-lg border self-center justify-center border-black rounded-lg" placeholder="Enter text" style="resize: none;"></textarea>
+                <textarea class="input-key key-div remove w-11/12 md:h-1/3 m-2 p-2 rounded-lg border self-center justify-center border-black rounded-lg" placeholder="Enter keyword" style="resize: none;"></textarea>
+                <textarea class="input-link link-div remove w-11/12 md:h-1/3 m-2 p-2 rounded-lg border self-center justify-center border-black rounded-lg" placeholder="Enter link" style="resize: none;"></textarea>
+                <input type="file" class="doc-div remove w-3/6 md:h-11 p-2 rounded-lg border self-center justify-center">
+                <textarea class="input-text output text-div remove w-11/12 md:h-1/3 m-2 p-2 rounded-lg border self-center justify-center border-black rounded-lg" readonly placeholder="Summary..." style="resize: none;"></textarea>
+            </div>
+        </div>
+        <div class="options w-full md:w-1/3 mt-10">
+            <div class="flex flex-col w-full md:h-screen">
+                <button class="text-option w-1/2 self-center justify-center bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l mt-2" onclick="text()">Summarize Text</button>
+                <button class="key-option w-1/2 self-center justify-center bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l mt-2" onclick="keyword()">Summarize Keyword</button>
+                <button class="doc-option w-1/2 self-center justify-center bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l mt-2" onclick="doc()">Summarize Documents</button>
+                <button class="link-option w-1/2 self-center justify-center bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l mt-2" onclick="link()">Summarize Links</button>
+                <!-- bg-blue-500 -->
+                <button class="summarize self-center justify-center w-1/2 flex sm:inline-flex justify-center items-center bg-gradient-to-tr from-pink-500 to-red-400 hover:from-pink-600 hover:to-red-500 active:from-pink-700 active:to-red-600 focus-visible:ring ring-pink-300 text-white font-semibold text-center rounded-md outline-none transition duration-100 px-5 py-2 mt-2" onclick="process()">Summarize</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+	var inputdivs = {}
+var buttons = {}
+
+summary_mode = "text"
+var url = window.location.href;
+
+if (document.querySelector(".output").innerHTML.length > 0)
+	summary_mode = "doc"
+	document.querySelector(".output").classList.remove("remove")
+
+inputdivs["text"] = document.querySelector(".text-div")
+inputdivs["key"] = document.querySelector(".key-div")
+inputdivs["doc"] = document.querySelector(".doc-div")
+inputdivs["link"] = document.querySelector(".link-div")
+buttons["text"] = document.querySelector(".text-option")
+buttons["key"] = document.querySelector(".key-option")
+buttons["doc"] = document.querySelector(".doc-option")
+buttons["link"] = document.querySelector(".link-option")
+
+function setVisible(divname, clear = true) {
+	if (clear)
+		document.querySelector(".output").classList.add("remove")
+	const divKeys = Object.keys(inputdivs)
+	for (var key in divKeys) {
+		if (divKeys[key] != divname)
+			inputdivs[divKeys[key]].classList.add("remove")
+		else
+			inputdivs[divKeys[key]].classList.remove("remove")
+	}
+	const buttonKeys = Object.keys(buttons)
+    console.log(buttons, buttonKeys)
+	for (var key in buttonKeys) {
+		if (buttonKeys[key] == divname){
+			buttons[buttonKeys[key]].classList.add("bg-blue-600")
+			buttons[buttonKeys[key]].classList.add("text-white")
+			buttons[buttonKeys[key]].classList.remove("bg-gray-300")
+			buttons[buttonKeys[key]].classList.remove("text-gray-800")
+		}
+		else{
+		    buttons[buttonKeys[key]].classList.add("bg-gray-300")
+		    buttons[buttonKeys[key]].classList.add("text-gray-800")
+			buttons[buttonKeys[key]].classList.remove("bg-blue-600")
+			buttons[buttonKeys[key]].classList.remove("text-white")
+		}
+	}
+}
+
+
+function text(){
+	summary_mode = "text"
+	setVisible(summary_mode)
+}
+
+function keyword(){
+	summary_mode = "key"
+	setVisible(summary_mode)
+}
+
+function doc(){
+	summary_mode = "doc"
+	setVisible(summary_mode)
+}
+
+function link(){
+	summary_mode = "link"
+	setVisible(summary_mode)
+}
+
+document.querySelector(".summarize").addEventListener("click", process)
+function process(){
+
+	if (summary_mode == "doc"){
+		var formData = new FormData();
+		formData.append('image', $('input[type=file]')[0].files[0]);
+
+		$.ajax({
+			url: 'upload',
+			data: formData,
+			type: 'POST',
+			contentType: false,
+			processData: false,
+			success: function(msg) {
+				document.querySelector(".output").value = msg
+			},
+			error: function() {
+				document.querySelector(".output").value = "Something went wrong :("
+			}
+		});
+	} else {
+		var query = "." + summary_mode + "-div"
+		const text = document.querySelector(query).value
+		console.log(text)
+
+		const toSend = {
+				data : text,
+			mode : summary_mode
+		};
+
+		const jsonString = JSON.stringify(toSend)
+		var req = new XMLHttpRequest()
+
+		req.onload = function(){
+			output_box = document.querySelector(".output")
+			output_box.classList.remove("remove")
+			output_box.value = this.response
+			sum_btn.innerHTML = "Start"
+			sum_btn.disabled = false
+			sum_btn.style.cursor = "pointer"
+		};
+
+		req.open("POST", "process");
+		req.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+		sum_btn = document.querySelector(".summarize")
+		sum_btn.innerHTML = "Working..."
+		sum_btn.disabled = true
+		sum_btn.style.cursor = "wait"
+		req.send(jsonString)
+	}
+}
+setVisible(summary_mode, false)
+</script>
