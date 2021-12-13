@@ -1,4 +1,8 @@
 # Abstractive Text Summarizer
+Made by **Team Binary Brains** <br>
+- [Amogh Pradeep](https://www.linkedin.com/in/amogh-pradeep-0061b9108/)
+- [Harshad Bhere](https://www.linkedin.com/in/harshadbhere/)
+- [Harshvardhan Thakur](https://www.linkedin.com/in/harsh-vardhan-thakur-74a224195/)
 ## How to install ##
 Steps : 
   1. Clone repository.
@@ -57,3 +61,6 @@ Transformers solve both the disadvantages of LSTM. They can recall data they've 
     <p align="center"> Workflow </p>
 <br>
 👉 For the UI, we have used the Flask framework to connect our model with the front-end. We have used AJAX to enable server-client communications.
+<br>
+👉 We have also implemented support for summarizing links, documents and keywords provided by the user. We have used Scrapy and PyPDF2 to achieve this.
+
