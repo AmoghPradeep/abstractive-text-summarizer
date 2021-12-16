@@ -64,3 +64,8 @@ Transformers solve both the disadvantages of LSTM. They can recall data they've 
 <br>
 👉 We have also implemented support for summarizing links, documents and keywords provided by the user. We have used Scrapy and PyPDF2 to achieve this.
 
+<h2> Results </h2>
+  <p align="center">
+    <img src="https://user-images.githubusercontent.com/57984703/146382686-396e248c-54a7-4371-bea6-b52a74b51522.gif" alt="Transformers - Diagram" style= "width : 80%"/>
+  </p>
+  <p align="center">Summarizer UI</p>
