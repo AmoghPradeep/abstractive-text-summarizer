@@ -74,7 +74,7 @@ Transformers solve both the disadvantages of LSTM. They can recall data they've 
 <table>
     <tr style="text-align: center;">
         <th>Type</th>
-        <th style="width: 600px;">Article</th>
+        <th style="width: 300px;">Article</th>
         <th>Summary</th>
     </tr>
     <tr>
