@@ -1,8 +1,13 @@
 # Abstractive Text Summarizer
-Made by **Team Binary Brains** @ Manthan 2021 Hackathon<br>
-- [Amogh Pradeep](https://www.linkedin.com/in/amogh-pradeep-0061b9108/)
-- [Harshad Bhere](https://github.com/harshadbhere)
-- [Harshvardhan Thakur](https://github.com/hvt0707)
+© **Team Binary Brains** @ Manthan 2021 Hackathon<br>
+[Amogh Pradeep](https://www.linkedin.com/in/amogh-pradeep-0061b9108/) [Harshad Bhere](https://github.com/harshadbhere) [Harshvardhan Thakur](https://github.com/hvt0707)
+
+<h2> Results </h2>
+  <p align="center">
+    <img src="https://user-images.githubusercontent.com/57984703/146382686-396e248c-54a7-4371-bea6-b52a74b51522.gif" alt="Transformers - Diagram" style= "width : 80%"/>
+  </p>
+  <p align="center">Summarizer UI</p>
+
 ## How to install ##
 Steps : 
   1. Clone repository.
@@ -42,7 +47,7 @@ The problem with LSTM’s, is that they tend to have poor memory recall with dat
 </p>
 <p align="center"> Calculating Self Attention for "it" </p>
 <br>
-
+<div>
 This is implemented using a Transformer. A transformer consists of an <b>Encoder and a Decoder</b>. In simple terms, the encoder is responsible for calculating the self-attention and positional encoding. The decoder uses the output of the Encoder and the Outputs (shifted right) to generate the summary. Both Encoder and Decoder are composed of modules that can be stacked on top of each other multiple times.
     <p align="center">
       <img src="https://jalammar.github.io/images/t/The_transformer_encoders_decoders.png" alt="Transformers - Diagram" style= "width : 40%"/>
@@ -64,9 +69,27 @@ Transformers solve both the disadvantages of LSTM. They can recall data they've 
 <br>
 👉 We have also implemented support for summarizing links, documents and keywords provided by the user. We have used Scrapy and PyPDF2 to achieve this.
 
-<h2> Results </h2>
-  <p align="center">
-    <img src="https://user-images.githubusercontent.com/57984703/146382686-396e248c-54a7-4371-bea6-b52a74b51522.gif" alt="Transformers - Diagram" style= "width : 80%"/>
-  </p>
-  <p align="center">Summarizer UI</p>
-
+## Articles and Summary
+<br>
+<table>
+    <tr style="text-align: center;">
+        <th>Type</th>
+        <th style="width: 600px;">Article</th>
+        <th>Summary</th>
+    </tr>
+    <tr>
+        <td style="text-align: center;">Link</td>
+        <td><a href="https://en.wikipedia.org/wiki/Nico_Ditch">https://en.wikipedia.org/wiki/Nico_Ditch</a></td>
+        <td>Nico Ditch is a six-mile (9.7 km) long linear earthwork between Ashton-under-Lyne and Stretford in Greater Manchester, England. It was dug as a defensive fortification, or possibly a boundary marker, between the 5th and 11th century. The ditch is still visible in short sections, such as a 330-yard (300 m) stretch in Denton Golf Course. Part of the earthwork is protected as a Scheduled Ancient Monument.</td>
+    </tr>
+    <tr>
+        <td style="text-align: center;">Keyword</td>
+        <td>U.S. Route 45 in Michigan</td>
+        <td>US Highway 45 (US 45) is a highway that runs from Mobile, Alabama, to the Upper Peninsula (UP) of the state of Michigan. The highway forms a part of the Michigan trunkline highway system that is maintained by the Michigan Department of Transportation (MDOT) It enters the state from Wisconsin south of Watersmeet, ending at an intersection with Ontonagon Street in Ontario. In between, the roadway crosses the UP running for approximately 54+3⁄4 miles (88.1 km) through the Ottawa National Forest.</td>
+    </tr>
+    <tr>
+        <td style="text-align: center;">Text</td>
+        <td>The past 12 months have been the worst for aviation fatalities so far this decade - with the total of number of people killed if airline crashes reaching 1,050 even before the Air Asia plane vanished. Two incidents involving Malaysia Airlines planes - one over eastern Ukraine and the other in the Indian Ocean - led to the deaths of 537 people, while an Air Algerie crash in Mali killed 116 and TransAsia Airways crash in Taiwan killed a further 49 people. The remaining 456 fatalities were largely in incidents involving small commercial planes or private aircraft operating on behalf of companies, governments or organisations. Despite 2014 having the highest number of fatalities so far this decade, the total number of crashes was in fact the lowest since the first commercial jet airliner took off in 1949 - totalling just 111 across the whole world over the past 12 months. The all-time deadliest year for aviation was 1972 when a staggering 2,429 people were killed in a total of 55 plane crashes - including the crash of Aeroflot Flight 217, which killed 174 people in Russia, and Convair 990 Coronado, which claimed 155 lives in Spain. However this year's total death count of 1,212, including those presumed dead on board the missing Air Asia flight, marks a significant rise on the very low 265 fatalities in 2013 - which led to it being named the safest year in aviation since the end of the Second World War. Scroll down for videos. Deadly: The past 12 months have been the worst for aviation fatalities so far this decade - with the total of number of people killed if airline crashes reaching 1,158 even before the Air Asia plane (pictured) vanished. Fatal: Two incidents involving Malaysia Airlines planes - one over eastern Ukraine (pictured) and the other in the Indian Ocean - led to the deaths of 537 people. Surprising: Despite 2014 having the highest number of fatalities so far this decade, the total number of crashes was in fact the lowest since the first commercial jet airliner took off in 1949. 2014 has been a horrific year for Malaysia-based airlines, with 537 people dying on Malaysia Airlines planes, and a further 162 people missing and feared dead in this week's Air Asia incident. In total more than half the people killed in aviation incidents this year had been flying on board Malaysia-registered planes. In January a total of 12 people lost their lives in five separate incidents, while the same number of crashes in February killed 107.</td>
+        <td>The past 12 months have been the worst for aviation fatalities so far this decade. The total number of people killed if airline crashes reached 1,050 even before Air Asia plane vanished. Two incidents involving Malaysia Airlines planes led to the deaths of 537 people in 2014. The remaining 456 fatalities were largely in incidents involving small commercial planes or private aircraft operating on behalf of companies, governments or organisations. Despite 2014 having the highest number of fatalities, the number of crashes was the lowest since the first commercial jet airliner took off in 1949.</td>
+    </tr>
+</table>
