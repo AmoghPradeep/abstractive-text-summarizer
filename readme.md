@@ -1,12 +1,15 @@
 # Abstractive Text Summarizer
-© **Team Binary Brains** @ Manthan 2021 Hackathon<br>
-[Amogh Pradeep](https://www.linkedin.com/in/amogh-pradeep-0061b9108/) [Harshad Bhere](https://github.com/harshadbhere) [Harshvardhan Thakur](https://github.com/hvt0707)
-
-<h2> Results </h2>
   <p align="center">
     <img src="https://user-images.githubusercontent.com/57984703/146382686-396e248c-54a7-4371-bea6-b52a74b51522.gif" alt="Transformers - Diagram" style= "width : 80%"/>
   </p>
   <p align="center">Summarizer UI</p>
+ 
+© **Team Binary Brains** @ Manthan 2021 Hackathon<br>
+- [Amogh Pradeep](https://www.linkedin.com/in/amogh-pradeep-0061b9108/)
+- [Harshad Bhere](https://github.com/harshadbhere)
+- [Harshvardhan Thakur](https://github.com/hvt0707)
+
+
 
 ## How to install ##
 Steps : 
